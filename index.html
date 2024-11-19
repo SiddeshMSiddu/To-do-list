@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="/css/inted.css">
+</head>
+<body>
+    <script>
+    </script>
+    <div class="mainDiv">
+        <nav class="navBar">
+            <b>To-Do-List</b>
+        </nav>
+        <div id="originalDiv" class="container">
+            <div class="textDiv">
+                <input class="inputDiv" type="text" style="width: 100%; height: 88%;font-size: 20px;">
+            </div>
+            <div class="buttonDiv">
+                <button id="copyButton" >+</button>
+            </div>
+        </div>
+    
+        <div id="divContainer"></div>
+    
+        <script>
+            document.getElementById('copyButton').addEventListener('click', function() {
+                // Get the original div
+                const originalDiv = document.getElementById('originalDiv');
+                
+                // Clone the original div
+                const clonedDiv = originalDiv.cloneNode(true);
+                
+                // Add a class to the cloned div for styling
+                clonedDiv.classList.add('cloned');
+                
+                // Append the cloned div to the container
+                document.getElementById('divContainer').appendChild(clonedDiv);
+            });
+        </script>
+
+    </div>
+</body>
+</html>

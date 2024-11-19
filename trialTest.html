@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Div Example</title>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .cloned {
+            background-color: #f9f9f9;
+            border: 1px dashed #aaa;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="originalDiv" class="container">
+        <p>This is the original div content.</p>
+    </div>
+    <button id="copyButton">Copy Div</button>
+
+    <div id="divContainer"></div>
+
+    <script>
+        document.getElementById('copyButton').addEventListener('click', function() {
+            // Get the original div
+            const originalDiv = document.getElementById('originalDiv');
+            
+            // Clone the original div
+            const clonedDiv = originalDiv.cloneNode(true);
+            
+            // Add a class to the cloned div for styling
+            clonedDiv.classList.add('cloned');
+            
+            // Append the cloned div to the container
+            document.getElementById('divContainer').appendChild(clonedDiv);
+        });
+    </script>
+</body>
+</html>
